@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { Line } from "react-chartjs-2";
+import { Line } from 'react-chartjs-2';
 import {
     Chart as ChartJS, Title, Tooltip, LineElement, Legend,
     CategoryScale, LinearScale, PointElement, Filler,

@@ -11,12 +11,12 @@ interface User {
 
 export const Register: React.FC = () => {
     const [user, setUser] = useState<User>({ username: '', email: '', password: '' });
-    const [mensaje, setMensaje] = useState<string>('');
+    const [message, setMessage] = useState<string>('');
 
     const manejarCambio = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target;
         setUser({ ...user, [name]: value });
-        setMensaje('');
+        setMessage('');
     };
 
     const registrar = async (event: React.FormEvent) => {
@@ -24,7 +24,7 @@ export const Register: React.FC = () => {
 
         try {
             if (user.username === '' || user.email === '' || user.password === '') {
-                setMensaje('Todos los campos son requeridos');
+                setMessage('Todos los campos son requeridos');
                 return;
             }
             const response = await axios.post('http://localhost:3000/users', user);
@@ -33,10 +33,10 @@ export const Register: React.FC = () => {
                 text: response.data.msg,
                 icon: 'success'
             });
-            setMensaje('');
+            setMessage('');
         } catch (error: any) {
             console.error('Error al registrar:', error);
-            setMensaje(error.response.data.msg);
+            setMessage(error.response.data.msg);
         }
     };
 
@@ -62,7 +62,7 @@ export const Register: React.FC = () => {
                     </div>
                     <button type='submit' className='rounded border-0 p-2 w-100 mt-3 boton'>Registrar</button>
                     <Link to='/' className='btn btn-link text-dark w-100 mt-2'>¿Ya tienes cuenta? Inicia sesión</Link>
-                    {mensaje && <p className='bg-danger text-center text-white mt-2'>{mensaje}</p>}
+                    {message && <p className='bg-danger text-center text-white mt-2'>{message}</p>}
                 </form>
             </div>
         </div>

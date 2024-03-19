@@ -2,10 +2,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import { Register } from './pages/Register';
 import { Home } from './pages/Home';
-import { Graphics } from './pages/Graphics';
+import { Patients } from './pages/Patients';
 import { ProtectedRoute } from './pages/ProtectedRoute';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import { Checkup } from './pages/Checkup';
 
 
 function App() {
@@ -16,7 +17,8 @@ function App() {
         <Route path='/signup' element={<Register />} />
         <Route element={<ProtectedRoute />}>
           <Route path='/home' element={<Home />} />
-          <Route path='/graphics' element={<Graphics />} />
+          <Route path='/patients' element={<Patients />} />
+          <Route path='/checkup' element={<Checkup />} />
         </Route>
         <Route path='*' element={<h1>Not Founded</h1>} />
       </Routes>
