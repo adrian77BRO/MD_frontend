@@ -18,7 +18,7 @@ function App() {
         <Route element={<ProtectedRoute />}>
           <Route path='/home' element={<Home />} />
           <Route path='/patients' element={<Patients />} />
-          <Route path='/checkup' element={<Checkup />} />
+          <Route path='/checkup/:name' element={<Checkup />} />
         </Route>
         <Route path='*' element={<h1>Not Founded</h1>} />
       </Routes>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { UpdatePatient } from './UpdatePatient';
@@ -60,7 +61,7 @@ export const CardPatient: React.FC<PropsPatient> = ({ id, name, last_name, age, 
                         <button type='submit' className='btn btn-danger w-50 m-2' onClick={deletePatient}><FontAwesomeIcon icon={faTrashCan} /></button>
                         <button type='submit' className='btn btn-primary w-50 m-2' onClick={openModal}><FontAwesomeIcon icon={faPenToSquare} /></button>
                     </div>
-                    <button type='submit' className='btn btn-success w-100 p-2'>Monitorear</button>
+                    <Link to={`/checkup/${name}`} className='btn btn-success w-100 p-2'>Monitorear</Link>
                 </div>
             </div>
             <UpdatePatient

@@ -34,8 +34,7 @@ const Login: React.FC = () => {
                 icon: 'success'
             });
             localStorage.setItem('token', response.data.token);
-            localStorage.setItem('user', response.data.email);
-            console.log(response.data.email)
+            localStorage.setItem('user', response.data.user.username);
             navegar('/home');
             setMessage('');
         } catch (error: any) {
