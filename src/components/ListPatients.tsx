@@ -52,7 +52,7 @@ export const ListPatients: React.FC = () => {
                         ))}
                     </div>
                 </div>}
-            <button type='submit' className='btn btn-success m-3' onClick={openModal}>Agregar paciente</button>
+            <button type='submit' className='btn btn-success ms-5' onClick={openModal}>Agregar paciente</button>
             <FormPatient
                 show={showModal}
                 close={closeModal}

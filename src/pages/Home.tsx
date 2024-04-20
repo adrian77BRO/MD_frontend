@@ -1,50 +1,60 @@
-import React, { useState } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import { Line } from 'react-chartjs-2';
-import {
-    Chart as ChartJS, Title, Tooltip, LineElement, Legend,
-    CategoryScale, LinearScale, PointElement, Filler,
-} from 'chart.js';
-ChartJS.register(Title, Tooltip, LineElement, Legend,
-    CategoryScale, LinearScale, PointElement, Filler);
-import { UserData } from '../components/Data';
-import { Cards } from '../components/Cards';
+import React from 'react';
+import { Container, Row, Col, Carousel } from 'react-bootstrap';
 import { NavBar } from '../components/Navbar';
-import { Sidebar } from '../components/Sidebar';
+import checkup1 from '../assets/images/checkup1.jpg'
+import checkup2 from '../assets/images/checkup2.jpg'
+import fondo from '../assets/images/fondo.jpg'
 
 export const Home: React.FC = () => {
-    const [userData, setUserData] = useState({
-        labels: UserData.map((data) => data.day),
-        datasets: [
-            {
-                label: 'Historial',
-                data: UserData.map((data) => data.avgRate),
-                backgroundColor: [
-                    'rgba(75,192,192,1)',
-                    '#ecf0f1',
-                    '#50AF95',
-                    '#f3ba2f',
-                    '#2a71d0',
-                ],
-                borderColor: 'rgba(20,160,20)',
-                borderWidth: 5,
-            },
-        ],
-    });
-
     return (
         <>
             <NavBar />
             <Container fluid>
                 <Row>
-                    <Col md={2} className='sidebar'>
-                        <Sidebar />
+                    <Col md={6} className='p-5 mt-5'>
+                        <Carousel>
+                            <Carousel.Item>
+                                <img
+                                    className="d-block w-100"
+                                    src={checkup1}
+                                    alt=""
+                                />
+                                <Carousel.Caption>
+
+                                </Carousel.Caption>
+                            </Carousel.Item>
+                            <Carousel.Item>
+                                <img
+                                    className="d-block w-100"
+                                    src={checkup2}
+                                    alt=""
+                                />
+                                <Carousel.Caption>
+
+                                </Carousel.Caption>
+                            </Carousel.Item>
+                            <Carousel.Item>
+                                <img
+                                    className="d-block w-100"
+                                    src={fondo}
+                                    alt=""
+                                />
+                                <Carousel.Caption>
+
+                                </Carousel.Caption>
+                            </Carousel.Item>
+                        </Carousel>
                     </Col>
-                    <Col md={10} className='p-5'>
-                        <Cards />
+                    <Col md={6} className='p-5'>
                         <Row>
                             <Col>
-                                <Line className='graphic mt-5 p-3 rounded-3' data={userData} />
+                                <div className='card m-5'>
+                                    <h3 className='text-center m-5'>
+                                        Bienvenido a su sistema favorito, esta aplicación está diseñada para el
+                                        monitoreo de signos vitales de los pacientes para determinar el estado de
+                                        salud en el que se encuentran dependiendo de sus parámetros médicos.
+                                    </h3>
+                                </div>
                             </Col>
                         </Row>
                     </Col>

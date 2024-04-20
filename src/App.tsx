@@ -3,10 +3,11 @@ import Login from './pages/Login';
 import { Register } from './pages/Register';
 import { Home } from './pages/Home';
 import { Patients } from './pages/Patients';
+import { Checkup } from './pages/Checkup';
+import { Historial } from './pages/Historial';
 import { ProtectedRoute } from './pages/ProtectedRoute';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { Checkup } from './pages/Checkup';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path='/home' element={<Home />} />
           <Route path='/patients' element={<Patients />} />
           <Route path='/checkup/:name' element={<Checkup />} />
+          <Route path='/historial/:name' element={<Historial />} />
         </Route>
         <Route path='*' element={<h1>Not Founded</h1>} />
       </Routes>
