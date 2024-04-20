@@ -8,10 +8,9 @@ interface Props {
 }
 
 interface Checkup {
-    temperature: number;
     heartRate: number;
     spo2: number;
-    patient: string;
+    temperature: number;
 }
 
 export const CheckupInfo: React.FC<Props> = ({ patient }) => {
@@ -23,12 +22,11 @@ export const CheckupInfo: React.FC<Props> = ({ patient }) => {
     });
 
     const [checkup, setCheckup] = useState<Checkup>({
-        temperature: 0, heartRate: 0, spo2: 0, patient: patient
+        heartRate: 0, spo2: 0, temperature: 0
     });
 
     useEffect(() => {
         socket.on('getData', (data) => {
-            const checkupReq: Checkup = { ...data, patient };
             setCheckup(data);
         });
     });

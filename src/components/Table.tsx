@@ -1,18 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-interface Props {
-    patient: string;
-}
-
 interface Checkup {
-    temperature: number;
     heartRate: number;
     spo2: number;
-    patient: string;
+    temperature: number;
 }
 
-export const Table: React.FC<Props> = ({ patient }) => {
+export const Table: React.FC = () => {
     const [checkups, setCheckups] = useState<Checkup[]>([]);
 
     useEffect(() => {
@@ -33,8 +28,6 @@ export const Table: React.FC<Props> = ({ patient }) => {
         }
     }
 
-    const filteredCheckups = checkups.filter(checkup => checkup.patient === patient);
-
     return (
         <div style={{ overflowY: 'scroll', maxHeight: '400px' }} className='m-5 rounded-3'>
             <table className='table table-warning text-center'>
@@ -46,7 +39,7 @@ export const Table: React.FC<Props> = ({ patient }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {filteredCheckups.map((check, index) => (
+                    {checkups.map((check, index) => (
                         <tr key={index}>
                             <td>{check.heartRate}</td>
                             <td>{check.spo2}</td>

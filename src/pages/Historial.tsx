@@ -17,7 +17,7 @@ export const Historial: React.FC = () => {
                         <Row>
                             <Col>
                                 <h1 className='text-center m-3'>Historial del paciente {name}</h1>
-                                <Table patient={name}/>
+                                <Table />
                             </Col>
                         </Row>
                     </Col>
