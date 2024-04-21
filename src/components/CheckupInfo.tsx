@@ -15,7 +15,7 @@ interface Checkup {
 
 export const CheckupInfo: React.FC<Props> = ({ patient }) => {
     const token = localStorage.getItem('token');
-    const socket = io('http://localhost:8080', {
+    const socket = io('http://54.84.1.3:8080', {
         auth: {
             token: token,
         },

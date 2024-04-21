@@ -33,7 +33,7 @@ export const CardPatient: React.FC<PropsPatient> = ({ id, name, last_name, age, 
 
             if (result.isConfirmed) {
                 const token = localStorage.getItem('token');
-                const response = await axios.delete(`http://localhost:3000/patients/${id}`, {
+                const response = await axios.delete(`http://18.205.225.198:3000/patients/${id}`, {
                     headers: {
                         'Authorization': `${token}`
                     }

@@ -49,7 +49,7 @@ export const UpdatePatient: React.FC<PropsModal> = ({ id, name, last_name, age, 
                 setMessage('Edad inválida');
                 return;
             }
-            const response = await axios.put(`http://localhost:3000/patients/${id}`, patient, {
+            const response = await axios.put(`http://18.205.225.198:3000/patients/${id}`, patient, {
                 headers: {
                     'Authorization': `${token}`
                 }

@@ -44,7 +44,7 @@ export const FormPatient: React.FC<PropsModal> = ({ show, close }) => {
                 setMessage('Edad inválida');
                 return;
             }
-            const response = await axios.post('http://localhost:3000/patients', patient, {
+            const response = await axios.post('http://18.205.225.198:3000/patients', patient, {
                 headers: {
                     'Authorization': `${token}`
                 }

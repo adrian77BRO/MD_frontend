@@ -17,7 +17,7 @@ export const Table: React.FC = () => {
     const getCheckupsByPatient = async () => {
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.get('http://localhost:3000/checkup', {
+            const response = await axios.get('http://18.205.225.198:3000/checkup', {
                 headers: {
                     'Authorization': `${token}`
                 }

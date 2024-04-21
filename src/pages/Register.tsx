@@ -27,7 +27,7 @@ export const Register: React.FC = () => {
                 setMessage('Todos los campos son requeridos');
                 return;
             }
-            const response = await axios.post('http://localhost:3000/users', user);
+            const response = await axios.post('http://18.205.225.198:3000/users', user);
             Swal.fire({
                 title: '¡Bienvenido!',
                 text: response.data.msg,

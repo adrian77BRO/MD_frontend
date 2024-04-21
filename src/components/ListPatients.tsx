@@ -24,7 +24,7 @@ export const ListPatients: React.FC = () => {
     const getAllPatients = async () => {
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.get('http://localhost:3000/patients', {
+            const response = await axios.get('http://18.205.225.198:3000/patients', {
                 headers: {
                     'Authorization': `${token}`
                 }
